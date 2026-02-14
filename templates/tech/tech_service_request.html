@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="bg-gray-50 min-h-screen flex items-center py-10 md:py-14">
+  <div class="max-w-lg w-full mx-auto px-5 sm:px-6">
+
+    <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-8 md:p-9">
+
+      <!-- Title & Intro -->
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-3">
+        Request a Callback
+      </h1>
+      <p class="text-center text-gray-600 mb-8 md:mb-10 text-base">
+        Share your details and one of our team members will call you as soon as possible.
+      </p>
+
+      <!-- Success Message -->
+      {% if messages %}
+        {% for message in messages %}
+          <div class="mb-8 p-5 bg-green-50 border border-green-200 rounded-xl text-green-800 text-center text-base">
+            <strong class="block text-lg mb-2">Thank you!</strong>
+            Your callback request has been received.<br>
+            <span class="font-semibold text-red-700 block mt-1.5">
+              We will contact you shortly on +256 787 360 381
+            </span>
+            to discuss your project or requirements.
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <!-- Form -->
+      <form method="post" class="space-y-6">
+        {% csrf_token %}
+
+        <!-- Full Name -->
+        <div>
+          <label for="{{ form.full_name.id_for_label }}"
+                 class="block text-sm font-medium text-gray-700 mb-1.5">
+            Full Name <span class="text-red-600">*</span>
+          </label>
+          {{ form.full_name }}
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="{{ form.email.id_for_label }}"
+                 class="block text-sm font-medium text-gray-700 mb-1.5">
+            Email Address <span class="text-red-600">*</span>
+          </label>
+          {{ form.email }}
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label for="{{ form.phone.id_for_label }}"
+                 class="block text-sm font-medium text-gray-700 mb-1.5">
+            Phone Number <span class="text-red-600">*</span>
+          </label>
+          {{ form.phone }}
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="{{ form.message.id_for_label }}"
+                 class="block text-sm font-medium text-gray-700 mb-1.5">
+            Project Details / Questions (optional)
+          </label>
+          {{ form.message }}
+        </div>
+
+        <!-- Very prominent Submit Button -->
+        <div class="pt-6">
+          <button type="submit"
+                  class="w-full bg-blue-700 hover:bg-blue-800 focus:bg-blue-800
+                         text-white font-semibold text-lg py-4 px-8 rounded-xl
+                         shadow-lg hover:shadow-xl active:shadow-md
+                         transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0
+                         focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-offset-2">
+            Request Callback Now
+          </button>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-5">
+          We typically respond within a few hours on business days.
+          <br class="sm:hidden"> Calls are made from +256 787 360 381.
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

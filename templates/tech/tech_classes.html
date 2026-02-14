@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero / Header -->
+<section class="bg-gradient-to-b from-blue-50 to-white py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-blue-950 tracking-tight mb-4">
+      Tech Training Classes
+    </h1>
+    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+      Build real-world skills with structured, hands-on courses — from beginner to job-ready.
+      <br class="hidden sm:block">
+      <span class="font-medium text-blue-700">Start learning today — your future in tech begins here.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Courses Grid -->
+<section class="bg-white py-12 md:py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    {% if courses %}
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+
+        {% for course in courses %}
+          <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 
+                       hover:border-blue-300 hover:shadow-xl transition-all duration-300 
+                       flex flex-col h-full">
+
+            <!-- Image -->
+            <div class="h-48 overflow-hidden">
+              <img src="{{ course.image.url}}"
+                   alt="{{ course.course_name }}"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex flex-col flex-grow">
+
+              <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
+                {{ course.course_name }}
+              </h3>
+
+              <p class="text-gray-600 text-sm mb-5 line-clamp-3">
+                {{ course.description|truncatewords:25 }}
+              </p>
+
+              <!-- Key Info -->
+              <div class="text-sm text-gray-600 space-y-1.5 mb-6">
+                <p><span class="font-medium text-gray-800">Level:</span> {{ course.get_level_display }}</p>
+                <p><span class="font-medium text-gray-800">Mode:</span> {{ course.get_mode_display }}</p>
+                <p><span class="font-medium text-gray-800">Duration:</span> {{ course.duration }}</p>
+                {% if course.price %}
+                  <p><span class="font-medium text-gray-800">Price:</span> {{ course.price }}</p>
+                {% endif %}
+              </div>
+
+              <!-- Enroll Button – Always visible & prominent -->
+              <div class="mt-auto">
+                <a href="{% url 'tech_class_enroll' course.slug %}"
+                   class="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white 
+                          font-semibold py-3.5 rounded-xl transition-all duration-300 
+                          shadow-md hover:shadow-lg transform hover:-translate-y-1 active:translate-y-0">
+                  Enroll Now →
+                </a>
+              </div>
+
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+    {% else %}
+      <div class="text-center py-16">
+        <p class="text-xl text-gray-600">No courses available right now. Check back soon!</p>
+      </div>
+    {% endif %}
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16">
+      <p class="text-lg text-gray-700 mb-6">
+        Ready to start your tech journey? <br class="sm:hidden">
+        <span class="font-medium">Enroll in any course above — limited spots available!</span>
+      </p>
+      <a href="{% url 'contact_us' %}" 
+         class="inline-flex items-center bg-gray-800 hover:bg-gray-900 text-white 
+                font-medium px-8 py-3.5 rounded-xl transition duration-300 shadow-md">
+        Still have questions? Contact us →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

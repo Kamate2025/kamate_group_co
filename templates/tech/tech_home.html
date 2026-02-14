@@ -14,7 +14,7 @@
     <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-10">
       Building scalable, secure, and intelligent digital systems — from custom web & mobile applications to AI-powered platforms and enterprise-grade infrastructure.
     </p>
-    <a href="{% url 'contact_us' %}" 
+    <a href="{% url 'tech_service_request' %}" 
        class="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       Start Your Project →
     </a>
@@ -129,6 +129,60 @@
   </div>
 </section>
 
+<!-- New: Learning & Education Section -->
+<section class="bg-white py-16 md:py-20 border-t border-gray-100">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 mb-8">
+      Learn & Grow with Kamate Tech
+    </h2>
+    <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-10">
+      We believe technology should be accessible to everyone — especially the next generation of builders, innovators, and problem-solvers in Uganda and beyond.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-12">
+
+      <!-- Free YouTube Tutorials -->
+      <div class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <h3 class="text-2xl font-bold text-blue-900 mb-5">
+          Free Coding Tutorials on YouTube
+        </h3>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Are you a student, a beginner, or simply passionate about learning to code? 
+          Our YouTube channel offers completely <strong>FREE</strong> high-quality programming tutorials — from Python basics to web development, app building, and modern tech skills.
+        </p>
+        <p class="text-gray-700 font-medium mb-6">
+          Start your journey today. Turn curiosity into code. Build your future, one line at a time.
+        </p>
+        <a href="https://www.youtube.com/@codewithkamate" class="inline-flex items-center text-blue-700 font-semibold hover:text-blue-800">
+          Visit YouTube Channel →
+        </a>
+      </div>
+
+      <!-- Premium Programming Classes -->
+      <div class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <h3 class="text-2xl font-bold text-blue-900 mb-5">
+          Premium Personalized Programming Classes
+        </h3>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Ready to go deeper? Take your skills to the next level with <strong>1-on-1</strong> or small-group premium classes tailored exactly to your goals, pace, and current level.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Whether you're preparing for university, launching your first startup project, switching careers, or mastering advanced topics — we create a learning path that fits <strong>you</strong>.
+        </p>
+        <a href="{% url 'tech_classes' %}" 
+           class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-xl transition duration-300 shadow-md hover:shadow-lg">
+          View Classes & Enroll →
+        </a>
+      </div>
+
+    </div>
+
+    <p class="mt-12 text-lg text-gray-600 italic max-w-3xl mx-auto">
+      "The best investment you can make is in yourself. Start coding. Build something. Change your future."
+    </p>
+  </div>
+</section>
+
 <!-- CTA Final -->
 <section class="bg-blue-950 text-white py-16 md:py-20">
   <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center">
@@ -138,7 +192,7 @@
     <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
       Whether it's a simple web tool or a complex AI-driven enterprise platform — let's turn your vision into reliable, future-proof technology.
     </p>
-    <a href="{% url 'contact_us' %}" 
+    <a href="{% url 'tech_service_request' %}" 
        class="inline-flex items-center bg-white text-blue-950 hover:bg-gray-100 font-semibold text-lg px-10 py-4 rounded-xl shadow-lg transition-all duration-300">
       Discuss Your Project →
     </a>
