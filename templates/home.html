@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section – Bold, immersive entry with gradient & strong positioning -->
+<section class="relative bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.35),transparent_60%)]"></div>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+      Kamate Group Ltd
+    </h1>
+    <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-10">
+      Empowering Uganda and beyond through clear travel pathways and powerful digital solutions.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-6">
+      <a href="{% url 'travel_home' %}" 
+         class="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        Explore Travel Support →
+      </a>
+      <a href="/tech/" 
+         class="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-semibold text-lg px-10 py-4 rounded-xl transition-all duration-300">
+        Discover Tech Solutions →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Objectives – Compact, value-driven cards -->
+<section class="bg-white py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 text-center mb-12">
+      Our Core Objectives
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+      <div class="bg-blue-50 p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Empower</h3>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Giving individuals and businesses the tools, guidance, and digital presence to unlock new opportunities.
+        </p>
+      </div>
+      <div class="bg-blue-50 p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Simplify</h3>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Making complex travel processes and digital transformation clear, error-free, and stress-free.
+        </p>
+      </div>
+      <div class="bg-blue-50 p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Grow</h3>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Supporting sustainable expansion through reliable systems, innovation, and long-term advisory.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Services – Dual-focus cards with links -->
+<section class="bg-gray-50 py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 text-center mb-12">
+      Our Core Services
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Travel Card -->
+      <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-blue-100 hover:shadow-2xl transition-all duration-300 group">
+        <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-10 text-white">
+          <h3 class="text-3xl font-bold mb-4">Travel Support & Advisory</h3>
+          <p class="text-blue-100 text-lg mb-6">
+            Expert guidance for passports, visas, CTDs, police clearance, flight bookings, and international opportunities — from Kampala to the world.
+          </p>
+        </div>
+        <div class="p-8">
+          <p class="text-gray-700 mb-6">
+            Avoid delays, rejections, and stress with structured, professional preparation tailored to your goals.
+          </p>
+          <a href="{% url 'travel_home' %}" 
+             class="inline-flex items-center text-blue-700 font-semibold hover:text-blue-800 group-hover:underline">
+            Explore Travel Services →
+          </a>
+        </div>
+      </div>
+
+      <!-- Tech Card -->
+      <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-blue-100 hover:shadow-2xl transition-all duration-300 group">
+        <div class="bg-gradient-to-br from-blue-700 to-blue-900 p-10 text-white">
+          <h3 class="text-3xl font-bold mb-4">Technology & Digital Solutions</h3>
+          <p class="text-blue-100 text-lg mb-6">
+            Custom websites, mobile apps, business systems, automation tools, and scalable digital infrastructure.
+          </p>
+        </div>
+        <div class="p-8">
+          <p class="text-gray-700 mb-4">
+            Starting from <strong>UGX 300,000</strong> — includes domain, hosting setup, and <strong>3 months free maintenance</strong>.
+          </p>
+          <a href="/tech/" 
+             class="inline-flex items-center text-blue-700 font-semibold hover:text-blue-800 group-hover:underline">
+            Explore Tech Solutions →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Real Challenges – Emotional hook -->
+<section class="bg-white py-16 md:py-20 border-t border-gray-100">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 mb-8">
+      We Solve Real Challenges
+    </h2>
+    <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+      Missed a visa deadline? Lost business because of no online presence? Struggled with manual processes that waste time and money?<br><br>
+      At Kamate Group, we exist to remove those barriers — so you can focus on what matters: your dreams and your growth.
+    </p>
+  </div>
+</section>
+
+<!-- Why Choose Us – Compact trust builders -->
+<section class="bg-blue-50 py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 text-center mb-12">
+      Why Kamate Group?
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow-md border border-blue-100">
+        <h3 class="text-xl font-bold text-blue-800 mb-4">Professional & Honest Guidance</h3>
+        <p class="text-gray-700">
+          Clear, accurate support — no shortcuts, no false promises.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-md border border-blue-100">
+        <h3 class="text-xl font-bold text-blue-800 mb-4">Affordable & Local Relevance</h3>
+        <p class="text-gray-700">
+          Quality services priced for Ugandan realities, with global standards.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-md border border-blue-100">
+        <h3 class="text-xl font-bold text-blue-800 mb-4">Built for Tomorrow</h3>
+        <p class="text-gray-700">
+          Scalable solutions ready for education platforms, subscriptions, and future expansion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="bg-blue-950 text-white py-20 md:py-24">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      Ready to Take the Next Step?
+    </h2>
+    <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+      Whether it's smoother travel or stronger digital presence — we're here to make it happen.
+    </p>
+    <a href="{% url 'contact_us' %}" 
+       class="inline-flex items-center bg-white text-blue-950 hover:bg-gray-100 font-semibold text-lg px-12 py-5 rounded-xl shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      Get in Touch Today →
+    </a>
+  </div>
+</section>
+
+{% endblock %}

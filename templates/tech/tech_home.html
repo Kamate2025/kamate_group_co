@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.3),transparent_60%)]"></div>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-6 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+      Technology Solutions by Kamate Group
+    </h1>
+    <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-10">
+      Building scalable, secure, and intelligent digital systems — from custom web & mobile applications to AI-powered platforms and enterprise-grade infrastructure.
+    </p>
+    <a href="{% url 'contact_us' %}" 
+       class="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      Start Your Project →
+    </a>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="bg-white py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 text-center mb-12">
+      Our Core Technology Services
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+      <!-- Web Applications -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">Modern Web Applications</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Responsive, high-performance web apps built with React, Next.js, Vue, Angular, Django, Laravel, Node.js — progressive web apps (PWAs), SaaS platforms, dashboards, e-commerce, and content-heavy portals.
+        </p>
+      </div>
+
+      <!-- Mobile Apps -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">Mobile App Development</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Native (iOS Swift / Android Kotlin) and cross-platform (Flutter, React Native) mobile applications — consumer apps, enterprise tools, field service apps, delivery platforms, and fitness/health solutions.
+        </p>
+      </div>
+
+      <!-- Custom Software -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">Custom Software Development</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Bespoke enterprise systems, CRM/ERP customizations, inventory & supply chain tools, HR & payroll platforms, booking/reservation systems, and industry-specific software (logistics, education, healthcare, finance).
+        </p>
+      </div>
+
+      <!-- AI & Machine Learning -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">AI & Machine Learning Integration</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Predictive analytics, recommendation engines, chatbots & virtual assistants, computer vision, NLP, document processing, fraud detection, demand forecasting, and custom ML model development.
+        </p>
+      </div>
+
+      <!-- Cloud Solutions -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">Cloud Architecture & Migration</h3>
+        <p class="text-gray-700 leading-relaxed">
+          AWS, Azure, Google Cloud — cloud-native apps, serverless architecture, microservices, data lakes, migration from legacy systems, cost optimization, and hybrid/multi-cloud strategies.
+        </p>
+      </div>
+
+      <!-- DevOps & Automation -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">DevOps & CI/CD</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Automated pipelines (GitHub Actions, Jenkins, GitLab CI), infrastructure as code (Terraform, Ansible), containerization (Docker, Kubernetes), monitoring (Prometheus, Grafana), and continuous delivery setups.
+        </p>
+      </div>
+
+      <!-- Blockchain & Web3 -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">Blockchain & Web3 Development</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Smart contracts (Solidity, Rust), dApps, NFT platforms, tokenization, supply chain transparency, decentralized identity, private/permissioned blockchains, and Web3 wallet integrations.
+        </p>
+      </div>
+
+      <!-- Cybersecurity -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">Cybersecurity & Compliance</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Secure code reviews, penetration testing, vulnerability assessments, encryption implementations, GDPR/HIPAA compliance, zero-trust architecture, and incident response planning.
+        </p>
+      </div>
+
+      <!-- IoT & Embedded -->
+      <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">IoT & Embedded Systems</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Connected device platforms, sensor integrations, real-time data processing, fleet management, smart agriculture/home/industry solutions, and edge computing applications.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="bg-gray-50 py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-950 text-center mb-12">
+      Why Businesses Trust Kamate Group for Tech
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <div class="text-5xl font-bold text-blue-700 mb-4">100%</div>
+        <p class="text-gray-700 text-lg">Uganda-rooted with global standards</p>
+      </div>
+      <div>
+        <div class="text-5xl font-bold text-blue-700 mb-4">End-to-End</div>
+        <p class="text-gray-700 text-lg">From idea to deployment & maintenance</p>
+      </div>
+      <div>
+        <div class="text-5xl font-bold text-blue-700 mb-4">Scalable</div>
+        <p class="text-gray-700 text-lg">Solutions that grow with your business</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="bg-blue-950 text-white py-16 md:py-20">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      Ready to Build Something Powerful?
+    </h2>
+    <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+      Whether it's a simple web tool or a complex AI-driven enterprise platform — let's turn your vision into reliable, future-proof technology.
+    </p>
+    <a href="{% url 'contact_us' %}" 
+       class="inline-flex items-center bg-white text-blue-950 hover:bg-gray-100 font-semibold text-lg px-10 py-4 rounded-xl shadow-lg transition-all duration-300">
+      Discuss Your Project →
+    </a>
+  </div>
+</section>
+
+{% endblock %}

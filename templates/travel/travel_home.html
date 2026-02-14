@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="bg-gradient-to-b from-blue-50 to-white py-16 md:py-20">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-950 tracking-tight mb-5">
+        Travel Advisory & Application Guidance
+      </h1>
+      <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Professional, step-by-step support to navigate travel documents, visas, and international opportunities with clarity, accuracy, and confidence.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+      <!-- Ugandan Passport -->
+      <div class="bg-white rounded-2xl shadow-md border border-blue-100 p-7 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">
+          Ugandan Passport Application Guidance
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Full support from document checklist to appointment booking and final submission readiness.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li><span class="font-semibold">Ordinary:</span> UGX 250,000 — ~10 working days</li>
+          <li><span class="font-semibold">Express:</span> UGX 400,000 — ~2 working days</li>
+        </ul>
+      </div>
+
+      <!-- Police Clearance -->
+      <div class="bg-white rounded-2xl shadow-md border border-blue-100 p-7 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">
+          Interpol / Police Clearance Letter
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Efficient step-by-step assistance to obtain your Police Clearance Certificate without delays.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li><span class="font-semibold">Service Fee:</span> UGX 76,000</li>
+          <li><span class="font-semibold">Timeline:</span> ~1 week</li>
+        </ul>
+      </div>
+
+      <!-- CTD for Refugees -->
+      <div class="bg-white rounded-2xl shadow-md border border-blue-100 p-7 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">
+          CTD – Conventional Travel Document (for Refugees)
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Expert guidance for registered refugees to apply for Convention Travel Documents in line with Ugandan regulations and UNHCR standards.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li><span class="font-semibold">Service Fee:</span> UGX 220,000</li>
+          <li>Support includes document preparation, OPM recommendation process & submission readiness</li>
+        </ul>
+      </div>
+
+      <!-- Visa Preparation -->
+      <div class="bg-white rounded-2xl shadow-md border border-blue-100 p-7 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">
+          Visa Application Preparation & Advisory
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Up-to-date requirements for destinations worldwide. We help with eligibility checks, document organization, and strong application planning to boost approval chances.
+        </p>
+      </div>
+
+      <!-- Flight Bookings -->
+      <div class="bg-white rounded-2xl shadow-md border border-blue-100 p-7 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">
+          Flight Bookings – Global Destinations
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Assistance finding optimal routes, dates, and competitive fares tailored to your travel needs and budget.
+        </p>
+      </div>
+
+      <!-- Jobs Abroad -->
+      <div class="bg-white rounded-2xl shadow-md border border-blue-100 p-7 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-bold text-blue-900 mb-4">
+          Jobs Abroad – Opportunity Guidance
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Advisory support for exploring international employment — including process info, documentation, and preparation for work visa pathways.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Other Documents -->
+    <div class="mt-12 bg-blue-50 rounded-2xl p-8 text-center">
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">
+        Other Travel Documents
+      </h3>
+      <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Need support with additional documentation (e.g. yellow fever certificates, exit/entry permits, etc.)? Our team provides clear, up-to-date guidance tailored to your exact requirements.
+      </p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-14 bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+      <p class="text-sm text-gray-600 leading-relaxed text-center">
+        <strong class="text-gray-800">Important:</strong> Kamate Group Ltd is <strong>not</strong> a government office. We do not issue passports, visas, clearance letters, CTDs, jobs, or any official documents. We offer independent professional advisory, preparation support, and error-checking services to help you succeed in official processes.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-14">
+      <a href="{% url 'travel_request' %}"
+         class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        Request Your Travel Support Now →
+      </a>
+      <p class="mt-4 text-sm text-gray-500">
+        Quick response • Personalized guidance • Stress-free preparation
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

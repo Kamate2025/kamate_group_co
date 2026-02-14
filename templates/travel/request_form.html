@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+.input-field:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+</style>
+
+<section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-lg">
+
+        <!-- Page Title -->
+        <div class="mb-10 text-center">
+            <h2 class="text-3xl font-bold text-gray-900">
+                Travel Service Request
+            </h2>
+            <p class="text-gray-600 mt-2">
+                Please select a service and provide the required details below.
+            </p>
+        </div>
+
+        <!-- Success Message -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="mb-8 border border-green-400 bg-green-100 text-green-800 px-6 py-4 rounded-xl shadow-sm">
+                    <strong class="block text-lg font-bold">
+                        ✔ Form Submitted Successfully!
+                    </strong>
+                    <span class="block mt-1 font-medium">
+                        One of our team members will contact you strictly through +256 787 360 381.
+                    </span>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post" class="space-y-8">
+            {% csrf_token %}
+
+            <!-- Service -->
+            <div>
+                <label for="id_service" class="block font-semibold text-gray-800">
+                    Select Service <span class="text-red-500">*</span>
+                </label>
+                {{ form.service }}
+            </div>
+
+            <!-- Name -->
+            <div>
+                <label for="id_name" class="block font-semibold text-gray-800">
+                    Full Name <span class="text-red-500">*</span>
+                </label>
+                {{ form.name }}
+            </div>
+
+            <!-- Phone -->
+            <div>
+                <label for="id_phone" class="block font-semibold text-gray-800">
+                    WhatsApp Number <span class="text-red-500">*</span>
+                </label>
+                {{ form.phone }}
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="id_email" class="block font-semibold text-gray-800">
+                    Email (Optional)
+                </label>
+                {{ form.email }}
+            </div>
+
+            <!-- Flight Specific Fields -->
+            <div id="flight-fields" style="display:none;" class="space-y-6">
+                <div>
+                    <label for="id_departure_airport" class="block font-semibold text-gray-800">
+                        Departing Airport <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.departure_airport }}
+                </div>
+
+                <div>
+                    <label for="id_destination" class="block font-semibold text-gray-800">
+                        Destination <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.destination }}
+                </div>
+
+                <div>
+                    <label for="id_travel_date" class="block font-semibold text-gray-800">
+                        Travel Date <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.travel_date }}
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label for="id_message" class="block font-semibold text-gray-800">
+                    Provide Additional Details (Optional)
+                </label>
+                {{ form.message }}
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-4">
+                <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition duration-200 shadow-md">
+                    Submit Request
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const serviceSelect = document.getElementById("id_service");
+    const flightFields = document.getElementById("flight-fields");
+
+    function toggleFields() {
+        const selectedText = serviceSelect.options[serviceSelect.selectedIndex].text;
+        if (selectedText === "Flight Booking") {
+            flightFields.style.display = "block";
+        } else {
+            flightFields.style.display = "none";
+        }
+    }
+
+    toggleFields();
+    serviceSelect.addEventListener("change", toggleFields);
+});
+</script>
+
+{% endblock %}
