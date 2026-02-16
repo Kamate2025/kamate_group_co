@@ -35,6 +35,6 @@ RUN python manage.py collectstatic --noinput
 
 # ---- Expose port & run ----
 EXPOSE 10000
+
 CMD python manage.py migrate --noinput && \
-    python create_superuser.py && \
-    gunicorn kamate_group_main.wsgi:application --bind 0.0.0.0:10000
+    gunicorn kamate_group_main.wsgi:application --bind 0.0.0.0:$PORT
