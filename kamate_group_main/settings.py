@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
-from django.contrib.auth import get_user_model
 
 load_dotenv()
 
@@ -155,13 +154,3 @@ NPM_BIN_PATH = "/usr/bin/npm"
 # CSRF_TRUSTED_ORIGINS = ['https://*.ngrok.io']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-if os.environ.get("CREATE_SUPERUSER") == "True":
-    User = get_user_model()
-    if not User.objects.filter(username="Kamate20252026").exists():
-        User.objects.create_superuser(
-            "Kamate20252026",
-            "admin@example.com",
-            "Kamate@215"
-        )
