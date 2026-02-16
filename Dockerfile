@@ -1,19 +1,26 @@
 # ---- Base Image ----
 FROM python:3.12-slim
 
-# ---- Set work directory ----
-WORKDIR /app
+# ---- Set environment variables ----
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV DJANGO_SETTINGS_MODULE=kamate_group_main.settings
+ENV SECRET_KEY="temporary_secret_key_for_docker_build"
 
 # ---- Install system dependencies ----
 RUN apt-get update && apt-get install -y \
     curl \
-    git \
     build-essential \
+    git \
     nodejs \
     npm \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# ---- Copy Python dependencies ----
+# ---- Set workdir ----
+WORKDIR /app
+
+# ---- Copy requirements and install Python deps ----
 COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
@@ -21,20 +28,20 @@ RUN pip install -r requirements.txt
 # ---- Copy project files ----
 COPY . .
 
-# ---- Set environment variables ----
-# SECRET_KEY fallback for build-time (can be overridden in Render settings)
-ENV SECRET_KEY="temporarysecretkey123"
-ENV DEBUG=True
-ENV ALLOWED_HOSTS="*"
+# ---- Install Node/Tailwind dependencies ----
+# Adjust 'theme' folder to your Tailwind app folder
+WORKDIR /app/theme
+RUN npm install
+
+# ---- Switch back to project root ----
+WORKDIR /app
 
 # ---- Build Tailwind CSS & collect static files ----
 RUN python manage.py tailwind build
 RUN python manage.py collectstatic --noinput
 
 # ---- Expose port ----
-EXPOSE 8000
+EXPOSE 10000
 
-# ---- Start server ----
-# Migrate DB, then run Gunicorn
-CMD python manage.py migrate --noinput && \
-    gunicorn kamate_group_main.wsgi:application --bind 0.0.0.0:8000
+# ---- Start Gunicorn ----
+CMD ["gunicorn", "kamate_group_main.wsgi:application", "--bind", "0.0.0.0:10000"]
