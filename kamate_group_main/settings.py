@@ -29,18 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = "django-insecure-u&=o6)e3jr)n!clt9qq6gq7#58)z%b889c6n8##+ero$mb(tw9"
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
 
 # ALLOWED_HOSTS = ['kamategroup.pythonanywhere.com', '127.0.0.1']
 
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
-
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
-if not SECRET_KEY:
-    raise ValueError("SECRET_KEY not set")
-
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+SECRET_KEY = os.environ.get("SECRET_KEY", "temporarysecretkey123")  # <--- fallback for build
+DEBUG = os.environ.get("DEBUG", "True") == "True"
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
 # Application definition
 

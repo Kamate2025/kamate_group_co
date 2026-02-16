@@ -1,10 +1,10 @@
-# 1. Use official Python image
+# ---- Base Image ----
 FROM python:3.12-slim
 
-# 2. Set working directory
+# ---- Set work directory ----
 WORKDIR /app
 
-# 3. Install system dependencies
+# ---- Install system dependencies ----
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -13,28 +13,28 @@ RUN apt-get update && apt-get install -y \
     npm \
     && rm -rf /var/lib/apt/lists/*
 
-# 4. Copy requirements first to leverage Docker cache
+# ---- Copy Python dependencies ----
 COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# 5. Copy project code
+# ---- Copy project files ----
 COPY . .
 
-# 6. Set temporary environment variables for Django
-ENV SECRET_KEY='temporarysecretkey123'
+# ---- Set environment variables ----
+# SECRET_KEY fallback for build-time (can be overridden in Render settings)
+ENV SECRET_KEY="temporarysecretkey123"
 ENV DEBUG=True
-ENV ALLOWED_HOSTS='*'
+ENV ALLOWED_HOSTS="*"
 
-# 7. Build Tailwind CSS
+# ---- Build Tailwind CSS & collect static files ----
 RUN python manage.py tailwind build
-
-# 8. Collect static files
 RUN python manage.py collectstatic --noinput
 
-# 9. Expose port 8000
+# ---- Expose port ----
 EXPOSE 8000
 
-# 10. Run migrations & start gunicorn
+# ---- Start server ----
+# Migrate DB, then run Gunicorn
 CMD python manage.py migrate --noinput && \
     gunicorn kamate_group_main.wsgi:application --bind 0.0.0.0:8000
